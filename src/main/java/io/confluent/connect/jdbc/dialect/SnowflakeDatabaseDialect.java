@@ -91,8 +91,6 @@ public class SnowflakeDatabaseDialect extends GenericDatabaseDialect {
         return "BOOLEAN";
       case STRING:
         return "TEXT";
-      case STRUCT:
-        return "VARIANT";
       case BYTES:
         return "BINARY";
       default:
