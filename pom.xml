@@ -26,7 +26,7 @@
     <groupId>io.confluent</groupId>
     <artifactId>kafka-connect-jdbc</artifactId>
     <packaging>jar</packaging>
-    <version>10.3.x-SNAPSHOT</version>
+    <version>5.5.5</version>
     <name>kafka-connect-jdbc</name>
     <organization>
         <name>Confluent, Inc.</name>
@@ -61,6 +61,7 @@
         <oracle.jdbc.driver.version>19.7.0.0</oracle.jdbc.driver.version>
         <mssqlserver.jdbc.driver.version>8.4.1.jre8</mssqlserver.jdbc.driver.version>
         <jtds.driver.version>1.3.1</jtds.driver.version>
+        <snowflake.driver.version>3.13.7</snowflake.driver.version>
         <licenses.name>Confluent Community License</licenses.name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.package.home>target/${project.artifactId}-${project.version}-package</project.package.home>
@@ -98,6 +99,12 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>${postgresql.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.snowflake</groupId>
+            <artifactId>snowflake-jdbc</artifactId>
+            <version>${snowflake.driver.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -321,6 +328,7 @@
                                 <tag>sap hana</tag>
                                 <tag>derby</tag>
                                 <tag>sqlite</tag>
+                                <tag>snowflake</tag>
                             </tags>
 
                             <confluentControlCenterIntegration>true</confluentControlCenterIntegration>
